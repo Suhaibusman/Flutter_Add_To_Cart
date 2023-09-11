@@ -40,17 +40,20 @@ class _HomeViewState extends State<HomeView> {
           title: Text(productitems[index]["productname"]),
           subtitle: Text(productitems[index]["productprice"].toString()),
           trailing: IconButton(onPressed: (){
-            setState(() {
-              cartaddeditems.add(productitems[index]);
+             
+                
+                 setState(()  {
+            cartaddeditems.add(productitems[index]);
             });
+              
+            
+           
           }, icon: const Icon(Icons.add)),
         );
       },),
 
       floatingActionButton: FloatingActionButton(onPressed: () async{
       await  Navigator.push(context, MaterialPageRoute(builder: (context) => const CartView(),));
-      setState(() {
-      });
       } ,child: const Icon(Icons.view_agenda),),
     );
   }
